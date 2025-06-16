@@ -1,73 +1,99 @@
-# Welcome to your Lovable project
+# מערכת ועדת ערר - Appeals Committee System
 
-## Project info
+מערכת ניהול תיקי ערר עברית למוסדות ציבור.
 
-**URL**: https://lovable.dev/projects/5e6718d2-549f-4b88-bdef-0f355312dd32
+## תיאור הפרויקט
 
-## How can I edit this code?
+מערכת מודרנית לניהול תיקי ערר עם תמיכה מלאה בעברית וכיוון RTL. המערכת מאפשרת:
 
-There are several ways of editing your application.
+- ניהול תיקי ערר (רישוי והיטל השבחה)
+- מעקב אחר משימות ודיונים
+- דשבורד מקיף עם סטטיסטיקות
+- דוחות וניתוחים
+- הגדרות מערכת
 
-**Use Lovable**
+## טכנולוגיות
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/5e6718d2-549f-4b88-bdef-0f355312dd32) and start prompting.
+הפרויקט בנוי עם:
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend**: React 18 + TypeScript + Vite
+- **UI Components**: shadcn/ui (Radix UI)
+- **Styling**: Tailwind CSS
+- **Backend**: Express.js + SQLite
+- **State Management**: TanStack Query
+- **Forms**: React Hook Form + Zod
 
-**Use your preferred IDE**
+## התקנה והפעלה
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### דרישות מוקדמות
+- Node.js 18+ ו-npm
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### שלבי התקנה
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+```bash
+# שלב 1: שכפול המאגר
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# שלב 2: מעבר לתיקיית הפרויקט
+cd appeals-committee-system
 
-# Step 3: Install the necessary dependencies.
-npm i
+# שלב 3: התקנת התלויות
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# שלב 4: אתחול בסיס הנתונים עם נתוני דוגמה
+npm run seed
+
+# שלב 5: הפעלת השרת (טרמינל נפרד)
+npm run server
+
+# שלב 6: הפעלת הפיתוח
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+המערכת תהיה זמינה בכתובת: http://localhost:8080
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## פקודות זמינות
 
-**Use GitHub Codespaces**
+- `npm run dev` - הפעלת שרת פיתוח (פורט 8080)
+- `npm run server` - הפעלת שרת API (פורט 3001)  
+- `npm run build` - בניית גרסת ייצור
+- `npm run lint` - בדיקת קוד עם ESLint
+- `npm run seed` - אתחול בסיס נתונים עם נתוני דוגמה
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## מבנה הפרויקט
 
-## What technologies are used for this project?
+```
+src/
+├── components/
+│   ├── ui/           # רכיבי UI בסיסיים (shadcn/ui)
+│   ├── cases/        # ניהול תיקים
+│   ├── tasks/        # ניהול משימות
+│   ├── reports/      # דוחות
+│   ├── settings/     # הגדרות
+│   └── layout/       # רכיבי פריסה
+├── hooks/           # React hooks מותאמים
+├── lib/             # עזרים ותצורות
+├── pages/           # דפי המערכת
+└── api.ts           # קריאות API
+```
 
-This project is built with:
+## תכונות עיקריות
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### ניהול תיקים
+- יצירת תיקי ערר חדשים (רישוי/היטל השבחה)
+- מעקב סטטוס תיקים
+- תיעוד דיונים ותאריכים
 
-## How can I deploy this project?
+### ניהול משימות
+- יצירת משימות ופעולות
+- קביעת עדיפויות ותאריכי יעד
+- הקצאת משימות לעובדים
 
-Simply open [Lovable](https://lovable.dev/projects/5e6718d2-549f-4b88-bdef-0f355312dd32) and click on Share -> Publish.
+### דשבורד ודוחות
+- סטטיסטיקות מרכזיות
+- דוחות התקדמות
+- ניתוח נתונים
 
-## Can I connect a custom domain to my Lovable project?
+## רישיון
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+הפרויקט מיועד לשימוש פנימי במוסדות ציבור.

@@ -48,7 +48,7 @@ Four main entities: Cases (תיקים), Hearings (דיונים), Tasks (משימ
 
 ## Configuration Files
 
-- **vite.config.ts** - Includes path aliases (@/\*), React SWC, and Lovable platform integration
+- **vite.config.ts** - Includes path aliases (@/\*) and React SWC
 - **tailwind.config.ts** - Comprehensive design system with custom colors and animations
 - **components.json** - shadcn/ui configuration (style: "default", css variables, Tailwind prefix)
 
